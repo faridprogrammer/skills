@@ -4,6 +4,30 @@ My personal library of agent skills collected from the internet and various sour
 
 Each skill lives in `skills/<skill-name>/` as a `SKILL.md` file (plus supporting resources) following the [Agent Skills](https://agentskills.io) format, so it can be loaded by coding agents / AI assistants.
 
+## Install
+
+Installs all skills to `~/.agents/skills/` (`%USERPROFILE%\.agents\skills` on Windows). The destination is cleaned first, then replaced with the contents of `skills/`.
+
+Windows (PowerShell):
+
+```powershell
+./install.ps1
+```
+
+macOS / Linux:
+
+```bash
+./install.sh
+# or: bash install.sh
+```
+
+Dry run (preview without changing anything):
+
+```powershell
+./install.ps1 -DryRun
+./install.sh --dry-run
+```
+
 ## Skills
 
 | Skill | What it's for |
@@ -23,7 +47,6 @@ Each skill lives in `skills/<skill-name>/` as a `SKILL.md` file (plus supporting
 | `oop-fundamentals` | Core OOP: encapsulation, value objects, responsibilities, design patterns. |
 | `solid-principles` | SOLID principles, decoupling, dependency direction, and architecture. |
 | `tdd` | Test-driven development: red-green-refactor for features and bug fixes. |
-| `teach` | Teach a new skill or concept within the workspace. |
 | `triage` | Triage issues and external PRs into agent-ready briefs. |
 
 ## Usage
