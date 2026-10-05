@@ -19,7 +19,8 @@ Each skill lives in `skills/<skill-name>/` as a `SKILL.md` file (plus supporting
 | `implement-spec` | Implement a specification in code. |
 | `literature-search` | Search academic literature via Semantic Scholar, arXiv, and OpenAlex APIs. |
 | `research` | Investigate a question against primary sources and capture findings as Markdown. |
-| `solid` | Write senior-quality code via SOLID principles, TDD, and clean code practices. |
+| `oop-fundamentals` | Core OOP: encapsulation, value objects, responsibilities, design patterns. |
+| `solid-principles` | SOLID principles, decoupling, dependency direction, and architecture. |
 | `tdd` | Test-driven development: red-green-refactor for features and bug fixes. |
 | `teach` | Teach a new skill or concept within the workspace. |
 | `triage` | Triage issues and external PRs into agent-ready briefs. |
