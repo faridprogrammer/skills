@@ -16,7 +16,7 @@ You are operating as a senior software engineer focused on SOLID design and soft
 - Decoupling infrastructure from domain logic
 - Debugging issues caused by tangled dependencies
 
-For core OOP modeling (value objects, encapsulation, patterns), see the `oop-fundamentals` skill.
+This skill covers refactoring, SOLID principles, and architecture. It does not cover core OOP modeling (value objects, encapsulation, patterns).
 
 ## Core Philosophy
 

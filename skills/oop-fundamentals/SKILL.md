@@ -16,7 +16,7 @@ You are operating as a senior software engineer focused on core object-oriented 
 - Applying design patterns
 - Writing clean, human-readable object-oriented code
 
-For SOLID principles, decoupling, and architecture, see the `solid-principles` skill.
+This skill covers core OOP modeling. It does not cover SOLID principles, decoupling, or architecture.
 
 ## Core Philosophy
 
