@@ -9,7 +9,6 @@ Each skill lives in `skills/<skill-name>/` as a `SKILL.md` file (plus supporting
 | Skill | What it's for |
 | ----- | ------------- |
 | `code-review` | Review changes since a commit/branch/tag along two axes: Standards and Spec. |
-| `codebase-design` | Shared vocabulary for designing deep modules and testable interfaces. |
 | `deep-research` | Systematic academic literature reviews in 6 phases with structured notes and final report. |
 | `diagnosing-bugs` | Diagnosis loop for hard bugs and performance regressions. |
 | `grill-me` | Relentless interview to sharpen a plan or design. |
