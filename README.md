@@ -33,6 +33,7 @@ Dry run (preview without changing anything):
 | Skill | What it's for |
 | ----- | ------------- |
 | `code-review` | Review changes since a commit/branch/tag along two axes: Standards and Spec. |
+| `doubt-driven-development` | Adversarially review non-trivial decisions from fresh context before proceeding. |
 | `backend-architecture` | Layered monolith backend in C# (.NET 8+, EF Core, MediatR). |
 | `frontend-architecture` | React 18 + TypeScript frontend with React Query, minimal dependencies. |
 | `deep-research` | Systematic academic literature reviews in 6 phases with structured notes and final report. |
