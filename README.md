@@ -41,8 +41,6 @@ Dry run (preview without changing anything):
 | `grill-me` | Relentless interview to sharpen a plan or design. |
 | `grill-with-docs` | Relentless interview that also produces ADRs and a glossary. |
 | `grilling` | Stress-test thinking on a plan, decision, or idea. |
-| `implement` | Implement a piece of work based on a spec or set of tickets. |
-| `implement-spec` | Implement a specification in code. |
 | `literature-search` | Search academic literature via Semantic Scholar, arXiv, and OpenAlex APIs. |
 | `research` | Investigate a question against primary sources and capture findings as Markdown. |
 | `oop-fundamentals` | Core OOP: encapsulation, value objects, responsibilities, design patterns. |
