@@ -39,13 +39,11 @@ Dry run (preview without changing anything):
 | `doubt-driven-development` | Adversarially review non-trivial decisions from fresh context before proceeding. |
 | `backend-architecture` | Layered monolith backend in C# (.NET 8+, EF Core, MediatR). |
 | `frontend-architecture` | React 18 + TypeScript frontend with React Query, minimal dependencies. |
-| `deep-research` | Systematic academic literature reviews in 6 phases with structured notes and final report. |
 | `diagnosing-bugs` | Diagnosis loop for hard bugs and performance regressions. |
 | `grill-me` | Relentless interview to sharpen a plan or design. |
 | `grill-with-docs` | Relentless interview that also produces ADRs and a glossary. |
 | `grilling` | Stress-test thinking on a plan, decision, or idea. |
-| `literature-search` | Search academic literature via Semantic Scholar, arXiv, and OpenAlex APIs. |
-| `research` | Investigate a question against primary sources and capture findings as Markdown. |
+| `research` | Tiered open-access research (Quick / Standard / Deep) with academic APIs, docs, web, and OSS; delivers `publish/report.md` reading bundle. |
 | `oop-fundamentals` | Core OOP: encapsulation, value objects, responsibilities, design patterns. |
 | `solid-principles` | SOLID principles, decoupling, dependency direction, and architecture. |
 | `tdd` | Test-driven development: red-green-refactor for features and bug fixes. |

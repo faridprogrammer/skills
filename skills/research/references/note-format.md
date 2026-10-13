@@ -191,3 +191,59 @@ Rules:
 - Year: 4 digits from publication date
 - Title word: first non-article word (skip a/an/the/on/in/of/for/to/with/and/or), lowercase
 - Collision handling: append a/b/c suffix (e.g., `smith2024transformera`, `smith2024transformerb`)
+
+## Publish report template (reading bundle)
+
+Use this for `publish/report.md`. Write for a human reader in Obsidian reading view, not for the agent.
+
+```markdown
+# {Title}
+
+*Research report · {YYYY-MM-DD}*
+
+## Executive summary
+
+One paragraph: what was studied, the main conclusion, and confidence (strong / mixed / limited evidence).
+
+## Contents
+
+- [Background](#background)
+- [Findings](#findings)
+- [Practical implications](#practical-implications)
+- [Open questions](#open-questions)
+- [References](#references)
+
+## Background
+
+Why this topic matters and how the review was scoped (sources, date range, tier).
+
+## Findings
+
+### {Theme one}
+
+Narrative prose with numbered citations [1][2]. No bullet dumps of paper titles.
+
+### {Theme two}
+
+...
+
+## Practical implications
+
+What a practitioner should do differently, if anything.
+
+## Open questions
+
+Unresolved gaps (from synthesis or gaps analysis in Deep tier).
+
+## References
+
+[1] Author et al. "Title." Venue, Year. URL
+
+[2] ...
+```
+
+**Rules for publish/**
+
+- No JSONL, merge logs, or phase gate checklists.
+- Use `[N]` numbered citations in the body; full entries under References.
+- Keep `references.bib` alongside for citation tools; the reader primarily uses `report.md`.

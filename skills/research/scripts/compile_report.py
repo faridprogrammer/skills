@@ -7,7 +7,8 @@ and generates report.md with proper [1], [2] citations and references.bib.
 Self-contained: uses only stdlib.
 
 Usage:
-    python compile_report.py --topic-dir output/long-horizon-reasoning/
+    python compile_report.py --topic-dir ./research-output/my-topic/
+    python compile_report.py --topic-dir ./research-output/my-topic/ --workspace-dir workspace --publish-dir publish
 """
 
 import argparse
@@ -158,7 +159,17 @@ def compute_stats(papers: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def load_notes(topic_dir: str) -> str:
+def resolve_workspace_dir(topic_dir: str, workspace_dir: str | None) -> str:
+    """Return workspace directory (workspace/ under topic, or legacy topic root)."""
+    if workspace_dir:
+        return workspace_dir
+    nested = os.path.join(topic_dir, "workspace")
+    if os.path.isdir(nested):
+        return nested
+    return topic_dir
+
+
+def load_notes(workspace_dir: str) -> str:
     """Load note files from phase-based directory structure.
 
     Searches for notes in this order:
@@ -176,7 +187,7 @@ def load_notes(topic_dir: str) -> str:
     ]
     parts = []
     for subdir, filename in phase_notes:
-        path = os.path.join(topic_dir, subdir, filename)
+        path = os.path.join(workspace_dir, subdir, filename)
         if os.path.exists(path):
             content = load_text(path)
             if content.strip():
@@ -186,7 +197,7 @@ def load_notes(topic_dir: str) -> str:
         return "\n\n---\n\n".join(parts)
 
     # Fallback: legacy notes/ directory
-    notes_dir = os.path.join(topic_dir, "notes")
+    notes_dir = os.path.join(workspace_dir, "notes")
     legacy_files = ["frontier.md", "survey.md", "deep_dive.md", "synthesis.md", "gaps.md"]
     if os.path.isdir(notes_dir):
         for name in legacy_files:
@@ -197,32 +208,45 @@ def load_notes(topic_dir: str) -> str:
                     parts.append(content)
 
     if not parts:
-        fallback = load_text(os.path.join(topic_dir, "notes.md"))
+        fallback = load_text(os.path.join(workspace_dir, "notes.md"))
         if fallback.strip():
             parts.append(fallback)
 
     return "\n\n---\n\n".join(parts)
 
 
-def compile_report(topic_dir: str):
+def compile_report(topic_dir: str, workspace_dir: str | None = None, publish_dir: str | None = None):
     """Compile all materials into a final report."""
-    paper_db_path = os.path.join(topic_dir, "paper_db.jsonl")
+    ws = resolve_workspace_dir(topic_dir, workspace_dir)
+    paper_db_path = os.path.join(ws, "paper_db.jsonl")
+    if not os.path.exists(paper_db_path):
+        paper_db_path = os.path.join(topic_dir, "paper_db.jsonl")
 
     # Code repos: phase-based first, then legacy fallbacks
-    code_path = os.path.join(topic_dir, "phase4_code", "code_repos.md")
+    code_path = os.path.join(ws, "phase4_code", "code_repos.md")
+    if not os.path.exists(code_path):
+        code_path = os.path.join(topic_dir, "phase4_code", "code_repos.md")
+    if not os.path.exists(code_path):
+        code_path = os.path.join(ws, "code_repos.md")
     if not os.path.exists(code_path):
         code_path = os.path.join(topic_dir, "code_repos.md")
     if not os.path.exists(code_path):
         code_path = os.path.join(topic_dir, "code_resources.md")
 
-    # Report output: phase-based directory
-    report_dir = os.path.join(topic_dir, "phase6_report")
+    # Report output: publish/ (read bundle) or legacy phase6_report/
+    if publish_dir:
+        report_dir = publish_dir
+    else:
+        report_dir = os.path.join(topic_dir, "publish")
+        if not os.path.isdir(report_dir):
+            legacy = os.path.join(topic_dir, "phase6_report")
+            report_dir = legacy if os.path.isdir(legacy) else report_dir
     os.makedirs(report_dir, exist_ok=True)
     report_path = os.path.join(report_dir, "report.md")
     bib_path = os.path.join(report_dir, "references.bib")
 
     papers = load_papers(paper_db_path)
-    notes = load_notes(topic_dir)
+    notes = load_notes(ws)
     code_resources = load_text(code_path)
 
     if not papers and not notes:
@@ -293,14 +317,28 @@ def compile_report(topic_dir: str):
 
 def main():
     parser = argparse.ArgumentParser(description="Compile research notes into a report")
-    parser.add_argument("--topic-dir", required=True, help="Topic output directory")
+    parser.add_argument("--topic-dir", required=True, help="Topic output root (contains workspace/ and publish/)")
+    parser.add_argument(
+        "--workspace-dir",
+        default=None,
+        help="Workspace directory (default: <topic-dir>/workspace or topic-dir for legacy)",
+    )
+    parser.add_argument(
+        "--publish-dir",
+        default=None,
+        help="Publish directory for report.md (default: <topic-dir>/publish)",
+    )
     args = parser.parse_args()
 
     if not os.path.isdir(args.topic_dir):
         print(f"Error: {args.topic_dir} is not a directory", file=sys.stderr)
         sys.exit(1)
 
-    compile_report(args.topic_dir)
+    publish = args.publish_dir
+    if publish is None:
+        publish = os.path.join(args.topic_dir, "publish")
+
+    compile_report(args.topic_dir, workspace_dir=args.workspace_dir, publish_dir=publish)
 
 
 if __name__ == "__main__":
