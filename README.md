@@ -33,6 +33,9 @@ Dry run (preview without changing anything):
 | Skill | What it's for |
 | ----- | ------------- |
 | `code-review` | Review changes since a commit/branch/tag along two axes: Standards and Spec. |
+| `csharp-development` | General C# on .NET 8+: types, nullability, async, exceptions, LINQ, and BCL patterns. |
+| `csharp-modern` | C# 14 and .NET 10 language and BCL features for everyday call sites. |
+| `csharp-readability` | Naming, layout, control flow, and clarity patterns for readable C#. |
 | `doubt-driven-development` | Adversarially review non-trivial decisions from fresh context before proceeding. |
 | `backend-architecture` | Layered monolith backend in C# (.NET 8+, EF Core, MediatR). |
 | `frontend-architecture` | React 18 + TypeScript frontend with React Query, minimal dependencies. |
