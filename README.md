@@ -59,8 +59,29 @@ Dry run (preview without changing anything):
 
 1. Create `skills/<skill-name>/SKILL.md` with YAML frontmatter (`name`, `description`).
 2. Keep the instructions focused and self-contained; add scripts/resources alongside if needed.
-3. Update the table above.
+3. Update the **Skills** and **Skill sources** tables below.
 
-## Sources
+## Skill sources
 
-Collected from various public sources across the internet. Individual skills may carry their own attribution or license notes — check the skill folder when reusing.
+Where each skill was originally copied from. Skills marked **Original** were authored in this collection. Upstream licenses apply when you redistribute derived skills — check the source repo.
+
+| Skill | Origin |
+| ----- | ------ |
+| `code-review` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/code-review`) |
+| `csharp-development` | Original (authored in this collection) |
+| `csharp-modern` | Original (authored in this collection) |
+| `csharp-readability` | Original (authored in this collection) |
+| `doubt-driven-development` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (`skills/doubt-driven-development`) |
+| `backend-architecture` | Original (authored in this collection) |
+| `frontend-architecture` | Original (authored in this collection) |
+| `diagnosing-bugs` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/diagnosing-bugs`) |
+| `grill-me` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/grill-me`) |
+| `grill-with-docs` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/grill-with-docs`). Upstream also expects `domain-modeling`, which is not bundled here. |
+| `grilling` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/grilling`) |
+| `research` | [lingzhi227/agent-research-skills](https://github.com/lingzhi227/agent-research-skills) (adapted from `deep-research` and `literature-search`; consolidated in this repo) |
+| `oop-fundamentals` | Original — split from the earlier `solid` skill in this repo; some `references/` files credit [Academind](https://academind.com) |
+| `solid-principles` | Same as `oop-fundamentals` |
+| `tdd` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/tdd`) |
+| `triage` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/triage`) |
+
+Some skills include extra attribution in their folders (for example Academind notes in `clean-code.md`). Check those files when reusing reference material.
