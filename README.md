@@ -41,8 +41,8 @@ Dry run (preview without changing anything):
 | `frontend-architecture` | React 18 + TypeScript frontend with React Query, minimal dependencies. |
 | `diagnosing-bugs` | Diagnosis loop for hard bugs and performance regressions. |
 | `grill-me` | Relentless interview to sharpen a plan or design. |
-| `grill-with-docs` | Relentless interview that also produces ADRs and a glossary. |
 | `grilling` | Stress-test thinking on a plan, decision, or idea. |
+| `ubiquitous-language` | Code-first flat domain glossary from the codebase; sync and drift resolution in markdown. |
 | `research` | Tiered open-access research (Quick / Standard / Deep) with academic APIs, docs, web, and OSS; delivers `publish/report.md` reading bundle. |
 | `oop-fundamentals` | Core OOP: encapsulation, value objects, responsibilities, design patterns. |
 | `solid-principles` | SOLID principles, decoupling, dependency direction, and architecture. |
@@ -76,8 +76,8 @@ Where each skill was originally copied from. Skills marked **Original** were aut
 | `frontend-architecture` | Original (authored in this collection) |
 | `diagnosing-bugs` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/diagnosing-bugs`) |
 | `grill-me` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/grill-me`) |
-| `grill-with-docs` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/grill-with-docs`). Upstream also expects `domain-modeling`, which is not bundled here. |
 | `grilling` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/grilling`) |
+| `ubiquitous-language` | Original (authored in this collection) |
 | `research` | [lingzhi227/agent-research-skills](https://github.com/lingzhi227/agent-research-skills) (adapted from `deep-research` and `literature-search`; consolidated in this repo) |
 | `oop-fundamentals` | Original — split from the earlier `solid` skill in this repo; some `references/` files credit [Academind](https://academind.com) |
 | `solid-principles` | Same as `oop-fundamentals` |
