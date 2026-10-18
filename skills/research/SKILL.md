@@ -124,6 +124,19 @@ Then **edit** `publish/report.md` into a clean reading narrative (remove raw sta
 - References section at the end
 - **Exclude**: agent checklists, JSONL, merge logs, internal phase labels
 
+## Writing style: simple English
+
+Write the final report and reader-facing notes in clear, simple English. Keep the research accurate and precise, but make it easy to read for someone who is not a specialist.
+
+- Prefer common words and short sentences.
+- Explain technical terms the first time they appear; avoid unexplained jargon and unnecessary abbreviations.
+- Put the main point first, then add the evidence and important limits.
+- Use active voice and concrete examples when they improve understanding.
+- Keep paragraphs focused on one idea. Use headings and bullets when they make the information easier to scan.
+- Replace dense academic wording with direct wording. For example, write “The evidence is mixed” instead of “The findings demonstrate substantial heterogeneity.”
+- Preserve uncertainty, disagreements, and source limitations. Simpler language must not make claims sound stronger than the evidence supports.
+- Apply this style to `publish/report.md` and any reader-facing summaries. Internal workspace files may keep technical detail needed for auditability.
+
 `publish/references.bib` when academic citations are used.
 
 ## Paper quality (Deep and Standard)

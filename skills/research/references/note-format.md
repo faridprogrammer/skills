@@ -196,6 +196,8 @@ Rules:
 
 Use this for `publish/report.md`. Write for a human reader in Obsidian reading view, not for the agent.
 
+Write in simple English: use common words, short sentences, active voice, and brief explanations for technical terms. Put the main point first and keep the strength of each claim aligned with the evidence.
+
 ```markdown
 # {Title}
 
