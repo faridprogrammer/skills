@@ -1,0 +1,27 @@
+{
+  "supportedFrameworks": [
+    "net8.0",
+    "net9.0",
+    "net10.0"
+  ],
+  "systemCommandLineVersion": "2.0.13",
+  "microsoftExtensionsPackageVersions": {
+    "net8": "8.0.1",
+    "net9": "9.0.0",
+    "net10": "10.0.0"
+  },
+  "optionNames": [
+    "--framework",
+    "--name",
+    "--non-interactive",
+    "--skip-validation",
+    "--help",
+    "--log-format"
+  ],
+  "exitCodes": {
+    "success": 0,
+    "runtimeFailure": 1,
+    "invalidInput": 2,
+    "cancellation": 130
+  }
+}

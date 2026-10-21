@@ -48,6 +48,7 @@ Dry run (preview without changing anything):
 | `solid-principles` | SOLID principles, decoupling, dependency direction, and architecture. |
 | `tdd` | Test-driven development: red-green-refactor for features and bug fixes. |
 | `triage` | Triage issues and external PRs into agent-ready briefs. |
+| `init-disposable-console-app` | Initialize a disposable C# console app in an empty visible directory with CLI commands, readable logging, configuration, and validation. |
 
 ## Usage
 
@@ -83,5 +84,6 @@ Where each skill was originally copied from. Skills marked **Original** were aut
 | `solid-principles` | Same as `oop-fundamentals` |
 | `tdd` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/tdd`) |
 | `triage` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/triage`) |
+| `init-disposable-console-app` | Original (authored in this collection) |
 
 Some skills include extra attribution in their folders (for example Academind notes in `clean-code.md`). Check those files when reusing reference material.
