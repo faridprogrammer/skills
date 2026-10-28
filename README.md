@@ -4,6 +4,17 @@ My personal library of agent skills collected from the internet and various sour
 
 Each skill lives in `skills/<skill-name>/` as a `SKILL.md` file (plus supporting resources) following the [Agent Skills](https://agentskills.io) format, so it can be loaded by coding agents / AI assistants.
 
+## Skill types
+
+Skill folder names show what kind of skill it is:
+
+| Prefix | Type | When to use |
+| ------ | ---- | ----------- |
+| `do-` | **Job skill** | Invoke when you want a workflow that runs a task or produces an output (review a branch, triage an issue, run research, scaffold a CLI app). |
+| `guide-` | **Reference guide** | Load while you work; the agent applies conventions and checklists (C# style, layering, SOLID, TDD). Usually combined with a job skill or normal coding, not invoked as a standalone session. |
+
+The `name` in each skill's YAML frontmatter matches its folder name.
+
 ## Install
 
 Installs all skills to `~/.agents/skills/` (`%USERPROFILE%\.agents\skills` on Windows). The destination is cleaned first, then replaced with the contents of `skills/`.
@@ -28,7 +39,7 @@ Dry run (preview without changing anything):
 ./install.sh --dry-run
 ```
 
-## Skills
+## Job skills (`do-`)
 
 | Skill | What it's for |
 | ----- | ------------- |
@@ -36,12 +47,17 @@ Dry run (preview without changing anything):
 | `do-develop-dotnet-cli-tools` | Develop production-grade C# command-line tools on .NET 8 or newer. |
 | `do-diagnosing-bugs` | Diagnosis loop for hard bugs and performance regressions. |
 | `do-doubt-driven-development` | Adversarially review non-trivial decisions from fresh context before proceeding. |
-| `do-grill-me` | Relentless interview to sharpen a plan or design. |
+| `do-grill-me` | Shortcut entry point that delegates to `do-grilling`. |
 | `do-grilling` | Stress-test thinking on a plan, decision, or idea. |
 | `do-init-disposable-console-app` | Initialize a disposable C# console app in an empty visible directory with CLI commands, readable logging, configuration, and validation. |
 | `do-research` | Tiered open-access research (Quick / Standard / Deep) with academic APIs, docs, web, and OSS; delivers `publish/report.md` reading bundle. |
 | `do-triage` | Triage issues and external PRs into agent-ready briefs. |
 | `do-ubiquitous-language` | Code-first flat domain glossary from the codebase; sync and drift resolution in markdown. |
+
+## Reference guides (`guide-`)
+
+| Skill | What it's for |
+| ----- | ------------- |
 | `guide-backend-architecture` | Layered monolith backend in C# (.NET 8+, EF Core, MediatR). |
 | `guide-csharp-development` | General C# on .NET 8+: types, nullability, async, exceptions, LINQ, and BCL patterns. |
 | `guide-csharp-modern` | C# 14 and .NET 10 language and BCL features for everyday call sites. |
@@ -55,17 +71,23 @@ Dry run (preview without changing anything):
 
 1. Browse `skills/<skill-name>/SKILL.md` for a skill's instructions.
 2. Copy the skill folder you want into your agent's skills directory (e.g. `~/.claude/skills/`, `~/.codex/skills/`, `.agents/skills/`), or point your agent at this repo.
-3. Invoke it as described in its `SKILL.md` frontmatter.
+3. For a **job skill**, invoke it as described in its `SKILL.md` frontmatter (or ask the agent to run that workflow).
+4. For a **reference guide**, mention the topic while you work, or rely on your agent's skill matching; guides shape how code is written and reviewed rather than starting a fixed pipeline.
+
+Example: "Review this PR" → `do-code-review`. "Build the API handler" → agent may use `guide-backend-architecture` and `guide-csharp-development` alongside normal edits.
 
 ## Adding a new skill
 
-1. Create `skills/<skill-name>/SKILL.md` with YAML frontmatter (`name`, `description`).
-2. Keep the instructions focused and self-contained; add scripts/resources alongside if needed.
-3. Update the **Skills** and **Skill sources** tables below.
+1. Choose a prefix: `do-` for a task workflow, `guide-` for reference knowledge.
+2. Create `skills/<skill-name>/SKILL.md` with YAML frontmatter (`name` must match the folder, plus `description`).
+3. Keep the instructions focused and self-contained; add scripts/resources alongside if needed.
+4. Update the job or guide table and **Skill sources** below.
 
 ## Skill sources
 
 Where each skill was originally copied from. Skills marked **Original** were authored in this collection. Upstream licenses apply when you redistribute derived skills — check the source repo.
+
+### Job skills
 
 | Skill | Origin |
 | ----- | ------ |
@@ -79,6 +101,11 @@ Where each skill was originally copied from. Skills marked **Original** were aut
 | `do-research` | [lingzhi227/agent-research-skills](https://github.com/lingzhi227/agent-research-skills) (adapted from `deep-research` and `literature-search`; consolidated in this repo) |
 | `do-triage` | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/triage`) |
 | `do-ubiquitous-language` | Original (authored in this collection) |
+
+### Reference guides
+
+| Skill | Origin |
+| ----- | ------ |
 | `guide-backend-architecture` | Original (authored in this collection) |
 | `guide-csharp-development` | Original (authored in this collection) |
 | `guide-csharp-modern` | Original (authored in this collection) |
