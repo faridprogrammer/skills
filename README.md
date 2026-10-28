@@ -36,6 +36,7 @@ Dry run (preview without changing anything):
 | `csharp-development` | General C# on .NET 8+: types, nullability, async, exceptions, LINQ, and BCL patterns. |
 | `csharp-modern` | C# 14 and .NET 10 language and BCL features for everyday call sites. |
 | `csharp-readability` | Naming, layout, control flow, and clarity patterns for readable C#. |
+| `develop-dotnet-cli-tools` | Develop production-grade C# command-line tools on .NET 8 or newer. |
 | `doubt-driven-development` | Adversarially review non-trivial decisions from fresh context before proceeding. |
 | `backend-architecture` | Layered monolith backend in C# (.NET 8+, EF Core, MediatR). |
 | `frontend-architecture` | React 18 + TypeScript frontend with React Query, minimal dependencies. |
@@ -72,6 +73,7 @@ Where each skill was originally copied from. Skills marked **Original** were aut
 | `csharp-development` | Original (authored in this collection) |
 | `csharp-modern` | Original (authored in this collection) |
 | `csharp-readability` | Original (authored in this collection) |
+| `develop-dotnet-cli-tools` | Original (authored in this collection) |
 | `doubt-driven-development` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (`skills/doubt-driven-development`) |
 | `backend-architecture` | Original (authored in this collection) |
 | `frontend-architecture` | Original (authored in this collection) |
